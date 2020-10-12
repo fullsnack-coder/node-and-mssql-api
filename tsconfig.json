@@ -21,5 +21,6 @@
       "@models/*": ["./src/models/*"],
       "@views/*": ["./src/views/*"]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }
