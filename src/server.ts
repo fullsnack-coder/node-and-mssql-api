@@ -1,11 +1,8 @@
-import express from 'express'
+import express from "express";
+import rootController from "@controllers/rootController";
 
 const app = express();
 
-app.get('/', (req, res) => {
-    return res.json({
-        ok: true
-    })
-})
+app.get("/", rootController);
 
-app.listen(3333)
+app.listen(3333);
