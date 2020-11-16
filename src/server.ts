@@ -1,8 +1,23 @@
 import express from 'express';
-import rootController from '@controllers/rootController';
+import cors from 'cors';
 
+import routes from '@routes/rootRouter';
+import configKeys from './config/keys';
+
+// wrapping the server
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
-app.get('/', rootController);
+// routes
+app.use('/', routes);
 
-app.listen(3333);
+async function initializeApp() {
+  const { port } = configKeys.server;
+  app.listen(port, () => {
+    console.log(`Server running at: http://localhost:${port}/`);
+  });
+}
+
+initializeApp();
