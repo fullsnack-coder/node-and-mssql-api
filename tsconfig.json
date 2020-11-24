@@ -19,7 +19,8 @@
     "paths": {
       "@controllers/*": ["./src/controllers/*"],
       "@models/*": ["./src/models/*"],
-      "@views/*": ["./src/views/*"]
+      "@views/*": ["./src/views/*"],
+      "@routes/*": ["./src/routes/*"]
     }
   },
   "include": ["src/**/*"]
